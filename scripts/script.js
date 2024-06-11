@@ -136,12 +136,10 @@ function submitForm() {
         },
         success: function(response) {
             if (response.success === 1) {
-                // Скрыть форму и показать сообщение об успехе
                 hideForm();
                 showSuccessMessage();
             } else {
                 alert('Возникла ошибка при оформлении заказа, позвоните нам и сделайте заказ.');
-                // Скрыть загрузчик
                 loader.style.display = 'none';
             }
         },
@@ -155,7 +153,6 @@ function submitForm() {
                 alert('Произошла ошибка при отправке данных. Повторите попытку позже.'); // Универсальное сообщение
             }
             alert('Произошла ошибка при отправке данных. Повторите попытку позже.');
-            // Скрыть загрузчик
             loader.style.display = 'none';
         }
     });
