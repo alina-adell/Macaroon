@@ -1,4 +1,4 @@
-//
+
 // const phoneInput =  document.getElementById('phoneInput');
 // const nameInput =  document.getElementById('nameInput');
 // const choiceOrder = document.getElementById('choiceOrder')
