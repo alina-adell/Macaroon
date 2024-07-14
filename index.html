@@ -228,7 +228,7 @@
         <div class="order__image">
             <img src="images/macaron_order.png" alt="Macaroonorder">
         </div>
-        <div class="order__form">
+        <div class="order__form" id="order">
             <div class="order__text">
                 <div class="order__title">
                     Закажите макарун!
@@ -243,26 +243,25 @@
                 </div>
                 <input type="text" class="base-input  order__base-input" id="choiceOrder"
                        placeholder="Напишите, что хотите заказать..." required>
-                <div class="error-message" id="orderError"></div>
+                <div class="error-message" id="orderError">Сделайте выбор</div>
             </div>
             <div class="order__data">
                 <div class="choice__text">
                     Заполните данные для заказа
                 </div>
                 <input type="text" class="base-input  order__base-input" id="nameInput" placeholder="Ваше имя" required>
-                <div class="error-message" id="nameError"></div>
+                <div class="error-message" id="nameError">Введите ваше имя</div>
 
                 <input type="text" class="base-input   order__base-input" id="phoneInput" placeholder="Телефон"
                        required>
-                <div class="error-message" id="phoneError"></div>
+                <div class="error-message" id="phoneError">Необходимо ввести номер телефона полностью</div>
 
 
-                <button class="btn order__btn" id="orderBtn">Оформить</button>
+                <button type="button" class="btn order__btn" id="orderBtn">Оформить</button>
             </div>
 
         </div>
     </div>
-    <div id="loader" class="loader">
     </div>
     <div id="successMessage" class="success-message">
     </div>
@@ -296,6 +295,9 @@
     </div>
 </div>
 
+<div class="loader">
+<div class="lds-default"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+</div>
 
 <script src="scripts/jquery-3.7.1.min.js"></script>
 <script src="scripts/jquery.inputmask.min.js"></script>
