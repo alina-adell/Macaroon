@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <title>Macaroon</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/adaptive.css">
+    <link rel="stylesheet/less" href="css/style.less">
+    <link rel="stylesheet/less" href="css/adaptive.less">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/less" ></script>
 </head>
 <body>
 <header class="header">
@@ -228,7 +229,7 @@
         <div class="order__image">
             <img src="images/macaron_order.png" alt="Macaroonorder">
         </div>
-        <div class="order__form" id="order">
+        <div class="order__form">
             <div class="order__text">
                 <div class="order__title">
                     Закажите макарун!
@@ -257,13 +258,13 @@
                 <div class="error-message" id="phoneError">Необходимо ввести номер телефона полностью</div>
 
 
-                <button type="button" class="btn order__btn" id="orderBtn">Оформить</button>
+                <button type="button" class="btn order__btn" id="orderBtn">Оформить заказ</button>
             </div>
 
         </div>
     </div>
     </div>
-    <div id="successMessage" class="success-message">
+    <div class ="success-message">
     </div>
     </div>
 </section>

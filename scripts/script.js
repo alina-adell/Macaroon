@@ -46,20 +46,17 @@ $('#orderBtn').click(function () {
             .done(function (msg) {
                 loader.hide();
                 if (msg.success === 1 && msg.name === "itlogia") {
+                    const orderData = document.querySelector('order__form');
+                    orderData.style.display = 'none';
+                    const successMessage = document.createElement('div');
+                    successMessage.classList.add('success-message');
+                    successMessage.textContent = 'Спасибо за Ваш заказ. Мы скоро свяжемся с Вами!';
 
-            const orderData = document.querySelector('.order');
-            orderData.style.display = 'none';
+                    document.body.appendChild(successMessage);
 
-            const successMessage = document.createElement('div');
-            successMessage.classList.add('success-message');
-            successMessage.textContent = 'Спасибо за Ваш заказ. Мы скоро свяжемся с Вами!';
-
-
-            document.body.appendChild(successMessage);
-        } else {
-            alert('Возникла ошибка при оформлении заказа, позвоните нам и сделайте заказ.');
-        }
-
+                } else {
+                    alert('Возникла ошибка при оформлении заказа, позвоните нам и сделайте заказ.');
+                }
             });
     }
 })

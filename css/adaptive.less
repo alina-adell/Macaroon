@@ -1,6 +1,5 @@
 
 
-
 @media screen and (max-width: 1169px) {
     .container {
         padding-left: 15px;
@@ -15,8 +14,11 @@
         padding: 67px 0 420px 0;
     }
 
-    .header .phone {
-        visibility: hidden;
+    .header {
+        phone {
+            visibility: hidden;
+        }
+
     }
 
     .main__container {
@@ -45,12 +47,14 @@
         grid-row-gap: 80px;
     }
 
-    .advantages__info h2 {
-        text-align: center;
-        max-width: 475px;
-        margin-left: auto;
-        margin-right: auto;
+    .advantages__info {
+        h2 {
+            text-align: center;
+            max-width: 475px;
+            margin-left: auto;
+            margin-right: auto;
 
+        }
     }
 
     .advantages__info-text {
@@ -129,14 +133,15 @@
         top: 0;
         left: 0;
         background: rgba(0, 0, 0, 0.54);
+        ul {
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+
+        }
     }
 
-    .menu ul {
-        flex-direction: column;
-        align-items: center;
-        justify-content: flex-start;
 
-    }
 
 
     #menuModal.open {
@@ -173,11 +178,13 @@
         display: block;
     }
 
-    .header__burger svg {
-        width: 36px;
-        height: 36px;
-        fill: #821328;
-        margin-right: 20px;
+    .header__burger {
+        svg {
+            width: 36px;
+            height: 36px;
+            fill: #821328;
+            margin-right: 20px;
+        }
     }
 
     .menu__close {
@@ -190,11 +197,13 @@
         right: 40px;
     }
 
-    .footer .phone {
-        grid-row: 2/3;
-        text-align: center;
+    .footer {
+        phone {
+            grid-row: 2/3;
+            text-align: center;
 
 
+        }
     }
 
     .footer__rights {
@@ -266,10 +275,12 @@
         grid-row: 1/2;
     }
 
-    .advantages__info h2 {
-        font-size: 30px;
-        line-height: 1.167;
-        max-width: 317px;
+    .advantages__info {
+        h2 {
+            font-size: 30px;
+            line-height: 1.167;
+            max-width: 317px;
+        }
     }
 
     .advantages {
@@ -281,8 +292,10 @@
         grid-row: 2/3;
     }
 
-    .advantages__image img {
-        width: 302px;
+    .advantages__image {
+        img {
+            width: 302px;
+        }
     }
 
     .advantages__container {
@@ -296,10 +309,12 @@
 
     }
 
-    .products__title h2 {
-        font-size: 30px;
+    .products__title {
+        h2 {
+            font-size: 30px;
 
 
+        }
     }
 
     .products__container {
@@ -344,8 +359,10 @@
         width: 344px;
     }
 
-    .main__image img {
-        width: 250px;
+    .main__image {
+        img {
+            width: 250px;
+        }
     }
 
     .present {
