@@ -1,12 +1,8 @@
-@main-color: #eba8b1;
-@second-color: #ffefef;
-@btn-color1: rgb(113, 8, 30);
-@btn-color2: rgb(215, 72, 92);
-@shadow-color: rgba(130, 19, 40, 0.5);
-@text-color1: rgb(255, 255, 255);
-@text-color2: rgb(51, 25, 7);
+@import "adaptive";
+@import "variables";
 
-.container() {
+
+.container-centre() {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -19,6 +15,7 @@
 
 body {
   background: @main-color;
+  font-family: GilroyRegular;
 }
 
 @font-face {
@@ -54,19 +51,17 @@ body {
 
 .header {
   padding: 36px 0 30px 0;
-}
-
-.header__burger {
-  display: none;
+  &__burger {
+    display: none;
+  }
+  &__container {
+    .container-centre();
+  }
 }
 
 .container {
   max-width: 1140px;
   margin: 0 auto;
-}
-
-.header__container {
-  .container();
 }
 
 .menu__list {
@@ -121,18 +116,18 @@ body {
   overflow: hidden;
   padding: 126px 0 108px 0;
 
-  .main__container {
+  &__container {
     position: relative;
     display: flex;
     align-items: self-start;
     justify-content: space-between;
   }
 
-  .main__info {
+  &__info {
     max-width: 580px;
   }
 
-  .main__title {
+  &__title {
     font-size: 55px;
     font-family: Tavolga, sans-serif;
     color: @text-color1;
@@ -140,7 +135,7 @@ body {
     margin-top: 23px;
   }
 
-  .main__text {
+  &__text {
     font-size: 18px;
     font-family: Tavolga, sans-serif;
     color: @text-color1;
@@ -149,12 +144,12 @@ body {
     margin-top: 59px;
   }
 
-  .main__action {
+  &__action {
     margin-top: 80px;
     margin-bottom: 37px;
   }
 
-  .main__btn {
+  &__btn {
     width: 240px;
     height: 60px;
     font-size: 18px;
@@ -236,7 +231,7 @@ body {
         padding-top: 60px;
         max-width: 397px;
         font-size: 18px;
-        font-family: Gilroy-Regular, sans-serif;
+        font-family: GilroyRegular, sans-serif;
         color: @text-color2;
         line-height: 1.556;
       }
@@ -257,7 +252,7 @@ body {
         width: 70px;
         height: 70px;
         font-size: 60px;
-        font-family: Gilroy-Extrabold, sans-serif;
+        font-family: GilroyExtrabold, sans-serif;
         color: @text-color1;
         text-align: center;
         margin-bottom: 13px;
@@ -280,7 +275,7 @@ body {
 
       .advantage-title {
         font-size: 20px;
-        font-family: Gilroy-Extrabold, sans-serif;
+        font-family: GilroyExtrabold, sans-serif;
         color: @text-color2;
         margin-bottom: 20px;
       }
@@ -357,7 +352,7 @@ body {
 
         .product__text {
           font-size: 15px;
-          font-family: Gilroy-Regular, sans-serif;
+          font-family: GilroyRegular, sans-serif;
           color: @text-color1;
           line-height: 1.5;
           max-width: 57px;
@@ -381,7 +376,7 @@ body {
   background: @second-color;
 
   .order__container {
-    .container();
+    .container-centre();
     flex-wrap: wrap;
     position: relative;
 
@@ -442,7 +437,7 @@ body {
 
 .choice__text {
   font-size: 18px;
-  font-family: Gilroy-Bold, sans-serif;
+  font-family: GilroyBold, sans-serif;
   color: rgb(18, 10, 6);
   padding-bottom: 21px;
   padding-top: 40px;
@@ -453,7 +448,7 @@ body {
   border-color: rgb(118, 12, 34);
   color: rgb(87, 8, 24);
   border-style: solid;
-  font-family: Gilroy-Bold, sans-serif;
+  font-family: GilroyBold, sans-serif;
   background-color: @second-color;
   font-size: 15px;
   padding: 23px 25px 24px 25px;
@@ -483,7 +478,7 @@ body {
   padding: 73px 0 63px 0;
 
   .footer__container {
-    .container();
+    .container-centre();
     flex-wrap: wrap;
   }
 }
@@ -502,7 +497,7 @@ body {
 
 .instagram__text {
   font-size: 16px;
-  font-family: Gilroy-Bold, sans-serif;
+  font-family: GilroyBold, sans-serif;
   color: @text-color1;
   padding-top: 5px;
 
@@ -522,7 +517,7 @@ body {
 
 .present__img {
   cursor: pointer;
-  /*position: relative;*/
+  position: relative;
   border-radius: 50%;
   background: radial-gradient(50% 50% at 50% 50%, rgb(102 1 14) 0%, rgb(225 0 43 / 50%) 100%);
   width: 90px;
@@ -531,7 +526,7 @@ body {
 }
 
 .present:hover .present__info {
-  /*display: block;*/
+  //display: block;
   top: calc(50% - 32px);
 }
 
@@ -549,7 +544,7 @@ body {
   width: 172px;
   height: 64px;
   font-size: 15px;
-  font-family: Gilroy-Medium, sans-serif;
+  font-family: GilroyMedium, sans-serif;
   color: rgb(119, 10, 29);
   padding: 14px 12px 10px 11px;
   background: white;
@@ -610,11 +605,6 @@ body {
 
 }
 
-.error-black {
-  border: 1px solid #000000;
-
-}
-
 .error-message {
   color: red;
   margin-top: -13px;
@@ -638,16 +628,17 @@ body {
 }
 
 .success-message {
-  display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  position: absolute;
   top: 0;
   left: 0; /* Позиционирование по умолчанию */
+  font-size: 45px;
+  font-family: Tavolga, sans-serif;
+  color: #331907;
 }
 
-@import "adaptive";
+
 
 
 

@@ -18,20 +18,25 @@ $('#orderBtn').click(function () {
         name.next().show();
         name.addClass('error');
         hasError = true;
-
+    } else {
+        name.removeClass('error');
     }
+
     if (!product.val()) {
         product.next().show();
         product.addClass('error');
         hasError = true;
-
+    }else {
+        product.removeClass('error');
     }
+
 
     if (!phone.val()) {
         phone.next().show();
         phone.addClass('error');
         hasError = true;
-
+    }else {
+        phone.removeClass('error');
     }
 
 
@@ -45,14 +50,16 @@ $('#orderBtn').click(function () {
         })
             .done(function (msg) {
                 loader.hide();
-                if (msg.success === 1 && msg.name === "itlogia") {
-                    const orderData = document.querySelector('order__form');
+                if (msg.success === 1) {
+                    const orderData = document.querySelector('.order__form');
                     orderData.style.display = 'none';
                     const successMessage = document.createElement('div');
                     successMessage.classList.add('success-message');
                     successMessage.textContent = 'Спасибо за Ваш заказ. Мы скоро свяжемся с Вами!';
+                    const container = document.querySelector('.order__container');
 
-                    document.body.appendChild(successMessage);
+                    container.appendChild(successMessage);
+
 
                 } else {
                     alert('Возникла ошибка при оформлении заказа, позвоните нам и сделайте заказ.');
