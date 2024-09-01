@@ -17,6 +17,7 @@ gulp.task('less', function() {
         .pipe(cssmin())
         .pipe(rename({suffix: '.min'}))
         .pipe(gulp.dest('dist/'))
+        .pipe(browserSync.stream());
 });
 
 gulp.task('browser-sync', function () {
@@ -26,7 +27,7 @@ gulp.task('browser-sync', function () {
             },
             notify: false
         });
-    gulp.watch('./css/*.less', ['less']);
+    gulp.watch('./css/*.less', gulp.series('less'));
 });
 
-gulp.task('default', ['less']);
+gulp.task('default', gulp.series('less', 'browser-sync'));

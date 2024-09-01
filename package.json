@@ -16,6 +16,6 @@
     "gulp-plumber": "^1.2.1"
   },
   "dependencies": {
-
+    "browser-sync": "^3.0.2"
   }
 }
