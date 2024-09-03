@@ -1,51 +1,44 @@
 
-
 @media screen and (max-width: 1169px) {
     .container {
         padding-left: 15px;
         padding-right: 15px;
     }
-
 }
 
 @media screen and (max-width: 1023px) {
 
     .main {
         padding: 67px 0 420px 0;
+        &__container {
+            display: block;
+        }
+        &__image {
+            position: absolute;
+        }
+        &__action {
+            margin-bottom: 0;
+        }
+        &__image {
+            right: 55px;
+            margin-top: -62px;
+            margin-right: 0;
+        }
     }
 
     .header {
         phone {
             visibility: hidden;
         }
-
     }
 
-    .main__container {
-        display: block;
-    }
 
-    .main__image {
-        position: absolute;
-    }
-
-    .main__action {
-        margin-bottom: 0;
-    }
-
-    .main__image {
-        right: 55px;
-        margin-top: -62px;
-        margin-right: 0;
-    }
-
-    .advantages__container {
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
-        justify-items: center;
-        grid-column-gap: 54px;
-        grid-row-gap: 80px;
-    }
+    //.advantages__container {
+    //    grid-template-columns: 1fr 1fr;
+    //    justify-items: center;
+    //    grid-column-gap: 54px;
+    //    grid-row-gap: 80px;
+    //}
 
     .advantages__info {
         h2 {
@@ -140,8 +133,6 @@
 
         }
     }
-
-
 
 
     #menuModal.open {
@@ -270,39 +261,35 @@
     }
 
 
-
-    .advantages__info {
-        grid-row: 1/2;
-    }
-
-    .advantages__info {
-        h2 {
-            font-size: 30px;
-            line-height: 1.167;
-            max-width: 317px;
-        }
-    }
-
     .advantages {
         padding: 100px 0;
-    }
-
-    .advantages__image {
-        justify-self: center;
-        grid-row: 2/3;
-    }
-
-    .advantages__image {
-        img {
-            width: 302px;
+        &__container {
+            grid-row-gap: 60px;
+            grid-template-rows: 1fr 183px;
+            grid-column-gap: 15px;
+        }
+        &__image {
+            justify-self: center;
+            grid-row: 2/3;
+            img {
+                width: 302px;
+            }
+        }
+        &__info {
+            grid-row: 1/2;
+            h2 {
+                font-size: 30px;
+                line-height: 1.167;
+                max-width: 317px;
+            }
         }
     }
 
-    .advantages__container {
-        grid-row-gap: 60px;
-        grid-template-rows: 1fr 183px 1fr 1fr;
-        grid-column-gap: 15px;
-    }
+
+
+
+
+    .advantages
 
     .products__title {
         grid-column: 1/1;
