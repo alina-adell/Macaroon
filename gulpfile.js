@@ -9,9 +9,10 @@ const rename = require('gulp-rename');
 const concatCss = require('gulp-concat-css');
 const browserSync = require('browser-sync');
 const reload      = browserSync.reload;
+const del = require('del');
 
 gulp.task('less', function() {
-    return  gulp.src('./css/*.less')
+    return gulp.src('./css/*.less')
         .pipe(less())
         .pipe(concatCss("styles/bundle.css"))
         .pipe(cssmin())
@@ -20,14 +21,45 @@ gulp.task('less', function() {
         .pipe(browserSync.stream());
 });
 
+gulp.task('html', function () {
+    return gulp.src('./*.html')
+        .pipe(gulp.dest('dist/'))
+        .pipe(browserSync.stream());
+});
+gulp.task('fonts', function () {
+    return gulp.src('./fonts/*')
+        .pipe(gulp.dest('dist/fonts'))
+        .pipe(browserSync.stream());
+});
+gulp.task('images', function () {
+    return gulp.src('./images/*')
+        .pipe(gulp.dest('dist/images'))
+        .pipe(browserSync.stream());
+});
+gulp.task('scripts', function () {
+    return gulp.src('./scripts/*')
+        .pipe(gulp.dest('dist/scripts'))
+        .pipe(browserSync.stream());
+});
+
 gulp.task('browser-sync', function () {
      browserSync.init({
             server: {
-                baseDir: "./" // папка для локального сервера
+                baseDir: "dist" // папка для локального сервера
             },
             notify: false
         });
-    gulp.watch('./css/*.less', gulp.series('less'));
+    gulp.watch('./css/*.less', gulp.series('less'))
+    gulp.watch('./*.html', gulp.series('html'))
+    gulp.watch('./fonts/*', gulp.series('fonts'))
+    gulp.watch('./images/*', gulp.series('images'))
+    gulp.watch('./scripts/*', gulp.series('scripts'));
 });
 
-gulp.task('default', gulp.series('less', 'browser-sync'));
+gulp.task('clean', function () {
+    return del('dist')
+});
+
+
+
+gulp.task('default', gulp.series('clean','less', 'html', 'fonts', 'images', 'scripts', 'browser-sync'));
