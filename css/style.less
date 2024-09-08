@@ -1,5 +1,6 @@
 @import "variables";
 @import "adaptive";
+//@import "theme";
 
 
 .container-centre() {
@@ -257,7 +258,7 @@ body {
 
       .advantage__image {
         border-radius: 50%;
-        background-color: rgb(130, 19, 40);
+        background-color: @advantage-color;
         width: 70px;
         height: 70px;
         font-size: 60px;
@@ -490,7 +491,7 @@ body {
 }
 
 .footer {
-  background: #c0707c;
+  background: @footer-color;
   padding: 73px 0 63px 0;
 
   .footer__container {
