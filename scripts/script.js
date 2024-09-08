@@ -68,6 +68,19 @@ $('#orderBtn').click(function () {
             });
     }
 })
+// document.getElementById('burger').onclick = function () {
+//     document.getElementById('menu').classList.add('#menuModal');
+// }
+
+document.getElementById('burger').onclick = function () {
+    const menuModal = document.getElementById('menuModal');
+    menuModal.style.display = 'block';
+};
+
+document.getElementById('menu__close').onclick = function () {
+    const menuModal = document.getElementById('menuModal');
+    menuModal.style.display = 'none';
+};
 
 
 
