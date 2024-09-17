@@ -12,7 +12,7 @@ const reload      = browserSync.reload;
 const del = require('del');
 
 gulp.task('less', function() {
-    return gulp.src('./css/*.less')
+    return gulp.src('./css/*.less', { base: './' })
         .pipe(less())
         .pipe(concatCss("styles/bundle.css"))
         .pipe(cssmin())
